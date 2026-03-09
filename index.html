@@ -13,38 +13,50 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
             text-align: center;
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 50px;
+            padding: 60px;
             border-radius: 20px;
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.15);
+            max-width: 800px;
         }
-        h1 { color: #d4af37; letter-spacing: 5px; text-transform: uppercase; }
+        h1 { color: #d4af37; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 10px; }
+        .proclamation { font-style: italic; color: #fcf6ba; margin-bottom: 30px; line-height: 1.6; font-size: 1.2rem; }
+        .mission { color: #e0e0e0; margin-bottom: 40px; line-height: 1.8; text-align: justify; }
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
+            padding: 20px 50px;
             background: #d4af37;
             color: black;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            transition: 0.3s;
+            transition: 0.4s;
+            letter-spacing: 2px;
         }
-        .btn:hover { background: #fcf6ba; transform: scale(1.05); }
+        .btn:hover { background: #fcf6ba; transform: scale(1.05); box-shadow: 0 0 20px #d4af37; }
     </style>
 </head>
 <body>
     <div class="glass-card">
         <h1>Grand Citadel Palace</h1>
-        <p>Official Registry for the Global Creole Society</p>
-        <a href="https://buy.stripe.com/aFa7sL4Nq23ubaT4mF0RG01" class="btn">JOIN THE REGISTRY</a>
+        <p class="proclamation">Official Seat of the House of Dorvilus</p>
+        
+        <div class="mission">
+            The Global Creole Society is a prestigious network dedicated to cultural preservation, 
+            economic sovereignty, and the advancement of our global lineage. By entering this 
+            Registry, you affirm your commitment to the protocols of leadership and the 
+            prosperity of the Grand Citadel Palace infrastructure.
+        </div>
+
+        <a href="https://buy.stripe.com/aFa7sL4Nq23ubaT4mF0RG01" class="btn">JOIN THE REGISTRY AS A KNIGHT/DAME</a>
     </div>
 </body>
 </html>
