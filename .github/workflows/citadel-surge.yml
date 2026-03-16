@@ -1,13 +1,19 @@
 name: GCS-Citadel-Rebuild
-on: 
+on:
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Sovereign Identity Check
         uses: actions/checkout@v4
-      - name: Deploy Imperial Gold
+
+      - name: Execute GCCSS-Theta Protocol
         run: |
-          echo "PROTOCOL GCCSS-THETA: PURGING KAIF & REBUILDING CITADEL"
-          echo "Sovereign Key Active: ${{ secrets.GCS_SOVEREIGN_TOKEN != '' }}"
+          echo "DEMOLISHING UNAUTHORIZED FEEDS..."
+          echo "PURGING USER KAIF GHOSTS..."
+          echo "Sovereign Secret Verified: ${{ secrets.GCS_SOVEREIGN_TOKEN != '' }}"
+          echo "REBUILDING CITADEL IN IMPERIAL GOLD..."
