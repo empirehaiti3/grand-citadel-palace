@@ -1,0 +1,11 @@
+name: GCS-Citadel-Rebuild
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy Imperial Gold
+        run: echo "PROTOCOL GCCSS-THETA: PURGING KAIF & REBUILDING CITADEL"
+        env:
+          GCS_TOKEN: ${{ secrets.GCS_SOVEREIGN_TOKEN }}
