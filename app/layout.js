@@ -1,12 +1,11 @@
-export const metadata = {
-  title: 'Grand Citadel Palace',
-  description: 'Official Registry',
-}
-
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, backgroundColor: '#000' }}>{children}</body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
