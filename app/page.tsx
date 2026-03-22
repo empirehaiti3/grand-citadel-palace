@@ -15,8 +15,15 @@ export default function HomePage() {
       }}
     >
       <h1>GRAND CITADEL PALACE</h1>
-      <a href="/sovereign" style={{ color: "#D4AF37", textDecoration: "underline" }}>
-        Enter Sovereign Page
+
+      <a
+        href="/sovereign"
+        style={{
+          color: "#D4AF37",
+          textDecoration: "underline",
+        }}
+      >
+        Enter Sovereign
       </a>
     </main>
   );
