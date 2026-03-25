@@ -1,9 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+import './globals.css';
 
-body {
-  background: #0A0A0A;
-  margin: 0;
-  padding: 0;
+export const metadata = {
+  title: 'Grand Citadel Palace',
+  description: 'GCS Gateway',
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
