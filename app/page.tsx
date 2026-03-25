@@ -1,80 +1,188 @@
-'use client';
-
-export default function GrandCitadelPalace() {
-  const products = [
-    { id: 'V-01', name: 'THE GREAT CHARTER', price: '$21', sub: 'Foundational Sovereign Law' },
-    { id: 'V-02', name: 'SCHOLAR MASTERCLASS', price: '$104', sub: 'Ancestral Intelligence' },
-    { id: 'V-03', name: 'IMPERIAL EMBLEM', price: '$47', sub: 'Physical Sovereign Seal' }
-  ];
-
+export default function HomePage() {
   return (
-    <div style={{ backgroundColor: '#020202', minHeight: '100vh', color: '#D4AF37', fontFamily: 'serif', margin: 0, padding: 0, overflowX: 'hidden' }}>
-      
-      {/* Luminous Header: The Sovereign Bar */}
-      <header style={{ borderBottom: '1px solid rgba(0, 229, 255, 0.3)', padding: '25px 50px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'linear-gradient(to bottom, #111, #000)', boxShadow: '0 5px 30px rgba(0,0,0,0.8)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
-          <div style={{ padding: '3px', borderRadius: '50%', background: 'linear-gradient(45deg, #D4AF37, #00E5FF)', boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)' }}>
-            <img src="/GCS-Header.jpg" alt="Seal" style={{ width: '70px', height: '70px', borderRadius: '50%', objectFit: 'cover', display: 'block' }} />
-          </div>
-          <h1 style={{ letterSpacing: '0.4em', textTransform: 'uppercase', fontWeight: '900', fontSize: '1.6rem', margin: 0, textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>Global Creole Society</h1>
+    <main
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top, rgba(0,191,255,0.18) 0%, rgba(10,10,10,1) 32%, rgba(10,10,10,1) 100%)",
+        color: "#D4AF37",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "2rem",
+        fontFamily: "Georgia, Times New Roman, serif",
+      }}
+    >
+      <section
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          border: "1px solid rgba(212,175,55,0.28)",
+          borderRadius: "24px",
+          padding: "4rem 2rem",
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.18) 100%)",
+          boxShadow:
+            "0 0 30px rgba(0,191,255,0.12), 0 0 80px rgba(212,175,55,0.08), inset 0 0 40px rgba(255,255,255,0.02)",
+          backdropFilter: "blur(4px)",
+          textAlign: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "inline-block",
+            padding: "0.45rem 1rem",
+            marginBottom: "1.5rem",
+            border: "1px solid rgba(0,191,255,0.45)",
+            borderRadius: "999px",
+            color: "#00BFFF",
+            letterSpacing: "0.18em",
+            fontSize: "0.8rem",
+            textTransform: "uppercase",
+            boxShadow: "0 0 16px rgba(0,191,255,0.2)",
+          }}
+        >
+          Verified Economic Network
         </div>
-        <div style={{ color: '#00E5FF', fontSize: '11px', letterSpacing: '3px', border: '2px solid #00E5FF', padding: '8px 18px', borderRadius: '5px', fontWeight: 'bold', background: 'rgba(0, 229, 255, 0.05)' }}>ARCHITECT VERIFIED</div>
-      </header>
 
-      {/* Hero Section: The Imperial Portal */}
-      <main style={{ maxWidth: '1400px', margin: '0 auto', padding: '100px 30px' }}>
-        <section style={{ textAlign: 'center', marginBottom: '120px' }}>
-          <div style={{ fontSize: '10px', letterSpacing: '8px', color: '#00E5FF', marginBottom: '20px', fontWeight: 'bold' }}>ESTABLISHED 09-07-2021</div>
-          <h2 style={{ fontSize: 'clamp(3rem, 10vw, 7rem)', fontWeight: '900', color: '#FFF', margin: 0, letterSpacing: '-4px', lineHeight: '0.9' }}>
-            GRAND <span style={{ color: '#D4AF37' }}>CITADEL</span> PALACE
-          </h2>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontStyle: 'italic', fontSize: '1.4rem', marginTop: '20px', letterSpacing: '1px' }}>The Sovereign Seat of the House of Dorvilus</p>
-        </section>
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "clamp(2.4rem, 6vw, 5.5rem)",
+            lineHeight: 1.02,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#D4AF37",
+            textShadow:
+              "0 0 10px rgba(212,175,55,0.35), 0 0 28px rgba(212,175,55,0.12)",
+          }}
+        >
+          Global Creole Society
+        </h1>
 
-        {/* 3D Product Grid: The Vault Offerings */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '50px' }}>
-          {products.map((item) => (
-            <div key={item.id} style={{ background: 'linear-gradient(145deg, #0f0f0f, #050505)', border: '1px solid rgba(212, 175, 55, 0.15)', padding: '50px 40px', borderRadius: '5px', position: 'relative', boxShadow: '0 30px 60px rgba(0,0,0,0.6)', transition: '0.3s' }}>
-              <div style={{ position: 'absolute', top: '20px', right: '30px', fontSize: '3rem', opacity: 0.05, fontWeight: '900', color: '#00E5FF' }}>{item.id}</div>
-              <p style={{ color: '#00E5FF', fontSize: '11px', fontWeight: 'bold', letterSpacing: '4px', marginBottom: '15px' }}>OFFERING</p>
-              <h3 style={{ color: '#FFF', fontSize: '1.7rem', margin: '0 0 15px 0', letterSpacing: '1px' }}>{item.name}</h3>
-              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem', marginBottom: '40px', lineHeight: '1.6' }}>{item.sub}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '25px' }}>
-                <span style={{ fontSize: '2.2rem', fontWeight: '900', color: '#FFF' }}>{item.price}</span>
-                <button style={{ backgroundColor: '#D4AF37', color: '#000', border: 'none', padding: '15px 30px', fontWeight: '900', fontSize: '11px', textTransform: 'uppercase', cursor: 'pointer', borderRadius: '2px', boxShadow: '0 10px 20px rgba(212, 175, 55, 0.3)', letterSpacing: '1px' }}>Acquire Access</button>
+        <div
+          style={{
+            width: "140px",
+            height: "2px",
+            margin: "1.4rem auto 1.6rem",
+            background:
+              "linear-gradient(90deg, rgba(0,191,255,0) 0%, rgba(0,191,255,1) 50%, rgba(0,191,255,0) 100%)",
+            boxShadow: "0 0 18px rgba(0,191,255,0.8)",
+          }}
+        />
+
+        <p
+          style={{
+            maxWidth: "760px",
+            margin: "0 auto",
+            fontSize: "clamp(1rem, 2vw, 1.3rem)",
+            lineHeight: 1.7,
+            color: "#E8D9A8",
+          }}
+        >
+          A luminous gateway into a private, verified economic network for the
+          global Creole community — designed to connect professionals,
+          entrepreneurs, and institutions through opportunity, verification, and
+          sovereign collaboration.
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "1rem",
+            marginTop: "2.2rem",
+          }}
+        >
+          <a
+            href="/sovereign"
+            style={{
+              display: "inline-block",
+              padding: "0.95rem 1.8rem",
+              borderRadius: "10px",
+              textDecoration: "none",
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              background:
+                "linear-gradient(180deg, rgba(212,175,55,0.16) 0%, rgba(212,175,55,0.08) 100%)",
+              border: "1px solid #D4AF37",
+              color: "#D4AF37",
+              boxShadow:
+                "0 0 18px rgba(212,175,55,0.2), 0 0 26px rgba(0,191,255,0.12)",
+            }}
+          >
+            Enter Sovereign
+          </a>
+
+          <a
+            href="#what-is-gcs"
+            style={{
+              display: "inline-block",
+              padding: "0.95rem 1.8rem",
+              borderRadius: "10px",
+              textDecoration: "none",
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              border: "1px solid rgba(0,191,255,0.55)",
+              color: "#00BFFF",
+              boxShadow: "0 0 18px rgba(0,191,255,0.16)",
+            }}
+          >
+            Explore Network
+          </a>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "1rem",
+            marginTop: "3rem",
+            textAlign: "left",
+          }}
+        >
+          {[
+            "Verified talent directory",
+            "Private opportunity access",
+            "Contract eligibility framework",
+            "Portfolio validation and positioning",
+          ].map((item) => (
+            <div
+              key={item}
+              style={{
+                border: "1px solid rgba(212,175,55,0.16)",
+                borderRadius: "16px",
+                padding: "1.2rem",
+                background: "rgba(255,255,255,0.02)",
+                boxShadow: "inset 0 0 20px rgba(0,191,255,0.04)",
+              }}
+            >
+              <div
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "50%",
+                  background: "#00BFFF",
+                  boxShadow: "0 0 14px rgba(0,191,255,0.9)",
+                  marginBottom: "0.9rem",
+                }}
+              />
+              <div
+                style={{
+                  color: "#F1E2B5",
+                  fontSize: "1rem",
+                  lineHeight: 1.5,
+                }}
+              >
+                {item}
               </div>
             </div>
           ))}
         </div>
-      </main>
-
-      {/* Sovereign Privacy Footer */}
-      <footer style={{ borderTop: '1px solid rgba(0, 229, 255, 0.2)', padding: '80px 50px', backgroundColor: '#000' }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '60px' }}>
-          <div>
-            <h4 style={{ color: '#D4AF37', letterSpacing: '4px', fontSize: '13px', marginBottom: '25px', fontWeight: 'bold' }}>THE ARCHITECT'S SEAT</h4>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', lineHeight: '1.8' }}>
-              Established under the Jean Baptiste Pierre Louis lineage. Sunrise, Florida Operations. Protected by the GCS Sovereign Protocol.
-            </p>
-          </div>
-          <div>
-            <h4 style={{ color: '#00E5FF', letterSpacing: '4px', fontSize: '13px', marginBottom: '25px', fontWeight: 'bold' }}>IDENTITY</h4>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', lineHeight: '1.8' }}>
-              GLOBAL CREOLE SOCIETY LLC<br />
-              EIN: 87-2520636<br />
-              BOIR ID: 50000016405691
-            </p>
-          </div>
-          <div style={{ textAlign: 'right' }}>
-            <h4 style={{ color: '#00E5FF', letterSpacing: '4px', fontSize: '13px', marginBottom: '25px', fontWeight: 'bold' }}>MANDATE</h4>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', lineHeight: '1.8' }}>
-              MISSION GCCSS-THETA<br />
-              LAUNCH: 01/01/2027<br />
-              JE RENAIS DE MES CENDRES
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }
