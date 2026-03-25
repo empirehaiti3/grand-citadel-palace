@@ -9,7 +9,7 @@ export default function Home() {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* DARK OVERLAY (for readability) */}
+      {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* CENTER CONTENT */}
