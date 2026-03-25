@@ -28,18 +28,18 @@ export default function Home() {
         }`}
       />
 
-      {/* Glow Burst Effect */}
+      {/* Glow Effect */}
       {opening && (
         <div className="absolute inset-0 bg-white/30 animate-pulse z-20"></div>
       )}
 
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Center Content */}
+      {/* Content */}
       <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-4">
         
-        <h1 className="text-[#D4AF37] text-4xl md:text-6xl font-serif tracking-wide drop-shadow-[0_0_20px_rgba(212,175,55,0.6)]">
+        <h1 className="text-[#D4AF37] text-4xl md:text-6xl font-serif tracking-wide">
           Enter the Grand Citadel Palace
         </h1>
 
@@ -47,7 +47,7 @@ export default function Home() {
           onClick={handleEnter}
           className="mt-8 px-10 py-4 border border-[#D4AF37] text-[#D4AF37] text-lg tracking-widest rounded-md 
           hover:bg-[#D4AF37] hover:text-black transition-all duration-300 
-          shadow-[0_0_25px_rgba(212,175,55,0.7)] animate-pulse"
+          shadow-[0_0_25px_rgba(212,175,55,0.7)]"
         >
           ENTER
         </button>
