@@ -23,7 +23,9 @@ export default function Home() {
       <img
         src="/citadel.png"
         alt="Grand Citadel Palace"
-        className="absolute inset-0 w-full h-full object-cover"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ${
+          opening ? 'scale-125' : ''
+        }`}
       />
 
       {/* Glow Burst Effect */}
@@ -45,7 +47,7 @@ export default function Home() {
           onClick={handleEnter}
           className="mt-8 px-10 py-4 border border-[#D4AF37] text-[#D4AF37] text-lg tracking-widest rounded-md 
           hover:bg-[#D4AF37] hover:text-black transition-all duration-300 
-          shadow-[0_0_15px_rgba(212,175,55,0.5)]"
+          shadow-[0_0_25px_rgba(212,175,55,0.7)] animate-pulse"
         >
           ENTER
         </button>
