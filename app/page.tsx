@@ -7,7 +7,7 @@ export default function GrandCitadelPalace() {
 
   const handleEnter = () => {
     setIsWarping(true);
-    // 800ms Cinematic Warp: The "Digital Door" sequence
+    // 800ms "Warp Speed" sequence
     setTimeout(() => {
       setHasEntered(true);
       setIsWarping(false);
@@ -18,20 +18,20 @@ export default function GrandCitadelPalace() {
     return (
       <div style={{ backgroundColor: '#000', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
         
-        {/* THE GOLD PALACE - 3D Warp Layer */}
+        {/* THE GOLD PALACE - Warp Layer */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: 'url("/grand_palace.jpg.png")', 
           backgroundSize: 'cover', backgroundPosition: 'center',
           transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: isWarping ? 'scale(2.8) rotate(2deg)' : 'scale(1)',
+          transform: isWarping ? 'scale(3) rotate(2deg)' : 'scale(1)',
           filter: isWarping ? 'brightness(4) blur(40px)' : 'brightness(0.7) blur(0px)',
           zIndex: 1
         }} />
 
         {/* LUMINOUS UI OVERLAY */}
-        <div style={{ zIndex: 10, textAlign: 'center', opacity: isWarping ? 0 : 1, transition: 'opacity 0.4s ease' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: '900', letterSpacing: '0.5em', color: '#FFF', textShadow: '0 0 50px rgba(0, 229, 255, 0.8)', margin: 0, textTransform: 'uppercase' }}>GRAND CITADEL</h1>
+        <div style={{ zIndex: 10, textAlign: 'center', opacity: isWarping ? 0 : 1, transition: '0.4s' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: '900', letterSpacing: '0.5em', color: '#FFF', textShadow: '0 0 50px rgba(0, 229, 255, 0.8)', margin: 0 }}>GRAND CITADEL</h1>
           <p style={{ color: '#D4AF37', letterSpacing: '18px', fontSize: '1.2rem', marginTop: '10px' }}>PALACE</p>
           
           <button 
@@ -41,7 +41,7 @@ export default function GrandCitadelPalace() {
               border: '1px solid #00E5FF', color: '#00E5FF', padding: '24px 100px',
               fontSize: '12px', letterSpacing: '10px', textTransform: 'uppercase',
               cursor: 'pointer', fontWeight: '900', boxShadow: '0 0 40px rgba(0, 229, 255, 0.3)',
-              borderRadius: '2px', transition: '0.4s'
+              borderRadius: '2px'
             }}
           >
             Enter Gateway
@@ -51,13 +51,13 @@ export default function GrandCitadelPalace() {
     );
   }
 
-  {/* THE DESTINATION: SECURE MEMBER VAULT */}
+  {/* THE DESTINATION: SECURE VAULT */}
   return (
     <div style={{ backgroundColor: '#050505', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFF' }}>
       <div style={{ background: '#0A0A0A', padding: '80px 60px', border: '1px solid #D4AF37', borderRadius: '2px', textAlign: 'center', width: '100%', maxWidth: '450px', boxShadow: '0 50px 100px rgba(0,0,0,0.9)' }}>
         <img src="/GCS-Header.jpg" alt="Seal" style={{ width: '100px', marginBottom: '40px', border: '2px solid #D4AF37', borderRadius: '50%' }} />
         <h3 style={{ color: '#D4AF37', letterSpacing: '6px', textTransform: 'uppercase' }}>Vault Access</h3>
-        <p style={{ fontSize: '10px', color: 'rgba(0, 229, 255, 0.6)', letterSpacing: '3px', marginBottom: '40px' }}>IDENTITY AUTHENTICATION REQUIRED</p>
+        <p style={{ fontSize: '10px', color: 'rgba(0, 229, 255, 0.6)', letterSpacing: '3px', marginBottom: '40px' }}>AUTHENTICATION REQUIRED</p>
         <input type="password" placeholder="ENTER SOVEREIGN KEY" style={{ width: '100%', background: '#000', border: '1px solid #222', padding: '20px', color: '#FFF', marginBottom: '30px', textAlign: 'center', letterSpacing: '8px' }} />
         <button style={{ background: '#D4AF37', width: '100%', padding: '20px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer', letterSpacing: '4px' }}>Validate Access</button>
       </div>
