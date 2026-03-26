@@ -1,71 +1,54 @@
 'use client';
-
 import { useState } from 'react';
 
-export default function Home() {
-  const [opening, setOpening] = useState(false);
+export default function GrandCitadelPalace() {
+  const [hasEntered, setHasEntered] = useState(false);
 
-  const handleEnter = () => {
-    if (opening) return;
+  // THE CITADEL PALACE - FRONT PAGE
+  if (!hasEntered) {
+    return (
+      <div style={{ backgroundColor: '#020202', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: '#D4AF37', fontFamily: 'serif', overflow: 'hidden' }}>
+        
+        {/* Background Glow */}
+        <div style={{ position: 'absolute', width: '300px', height: '300px', background: 'rgba(0, 229, 255, 0.05)', filter: 'blur(100px)', borderRadius: '50%' }}></div>
+        
+        <div style={{ textAlign: 'center', zIndex: 10 }}>
+          <img src="/GCS-Header.jpg" alt="Sovereign Seal" style={{ width: '120px', height: '120px', borderRadius: '50%', border: '2px solid #00E5FF', boxShadow: '0 0 30px rgba(0, 229, 255, 0.3)', marginBottom: '40px' }} />
+          <h1 style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', fontWeight: '900', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#FFF', margin: 0 }}>GRAND CITADEL</h1>
+          <h2 style={{ fontSize: '1.2rem', letterSpacing: '8px', color: '#D4AF37', marginTop: '10px', fontWeight: 'light' }}>PALACE</h2>
+          
+          <button 
+            onClick={() => setHasEntered(true)}
+            style={{ marginTop: '60px', backgroundColor: 'transparent', border: '1px solid #00E5FF', color: '#00E5FF', padding: '15px 50px', fontSize: '12px', letterSpacing: '5px', textTransform: 'uppercase', cursor: 'pointer', transition: '0.3s', fontWeight: 'bold' }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0, 229, 255, 0.1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 229, 255, 0.5)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.boxShadow = 'none'; }}
+          >
+            ENTER
+          </button>
+        </div>
+      </div>
+    );
+  }
 
-    setOpening(true);
-
-    setTimeout(() => {
-      window.location.href = '/inside';
-    }, 2200);
-  };
-
+  // THE LOGIN PAGE - SECONDARY LAYER
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-black">
-
-      <img
-        src="/citadel.png"
-        alt="Grand Citadel Palace"
-        className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2200ms] ${
-          opening ? 'scale-125 brightness-150 blur-[2px]' : ''
-        }`}
-      />
-
-      <div
-        className={`absolute inset-0 transition-all duration-[2200ms] ${
-          opening ? 'bg-black/10' : 'bg-black/35'
-        }`}
-      />
-
-      <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
-        <div
-          className={`absolute left-0 top-0 h-full w-1/2 bg-black border-r border-cyan-400 transition-transform duration-[1800ms] ${
-            opening ? '-translate-x-full' : ''
-          }`}
-        />
-        <div
-          className={`absolute right-0 top-0 h-full w-1/2 bg-black border-l border-cyan-400 transition-transform duration-[1800ms] ${
-            opening ? 'translate-x-full' : ''
-          }`}
-        />
+    <div style={{ backgroundColor: '#050505', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFF', fontFamily: 'serif' }}>
+      <div style={{ background: '#0A0A0A', padding: '60px', borderRadius: '5px', border: '1px solid rgba(212, 175, 55, 0.2)', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
+        <h3 style={{ color: '#D4AF37', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '30px' }}>Member Login</h3>
+        
+        <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <input type="text" placeholder="Identity / Email" style={{ background: '#000', border: '1px solid #333', padding: '15px', color: '#FFF', fontSize: '14px' }} />
+          <input type="password" placeholder="Access Key" style={{ background: '#000', border: '1px solid #333', padding: '15px', color: '#FFF', fontSize: '14px' }} />
+          
+          <button style={{ backgroundColor: '#D4AF37', color: '#000', padding: '15px', fontWeight: 'bold', border: 'none', cursor: 'pointer', marginTop: '10px' }}>
+            AUTHENTICATE
+          </button>
+        </form>
+        
+        <p style={{ marginTop: '30px', fontSize: '10px', color: 'rgba(255,255,255,0.3)', letterSpacing: '1px' }}>
+          SOVEREIGN ACCESS PROTECTED BY GCS PROTOCOL
+        </p>
       </div>
-
-      <div
-        className={`absolute inset-0 z-30 transition-opacity duration-500 ${
-          opening ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <div className="absolute inset-0 bg-white/20" />
-      </div>
-
-      <div className="relative z-40 flex h-full items-end justify-center pb-24">
-        <button
-          onClick={handleEnter}
-          className={`px-12 py-4 text-2xl tracking-[0.35em] border rounded-md transition-all ${
-            opening
-              ? 'border-cyan-300 text-cyan-200'
-              : 'border-cyan-300 text-cyan-100 hover:scale-105 hover:bg-cyan-300/10'
-          }`}
-        >
-          ENTER
-        </button>
-      </div>
-
-    </main>
+    </div>
   );
 }
