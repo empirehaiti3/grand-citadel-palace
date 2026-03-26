@@ -1,66 +1,30 @@
-'use client';
-import { useState } from 'react';
+"use client";
 
-export default function GrandCitadelPalace() {
-  const [isWarping, setIsWarping] = useState(false);
-  const [hasEntered, setHasEntered] = useState(false);
+import { motion } from "framer-motion";
 
-  const handleEnter = () => {
-    setIsWarping(true);
-    // 800ms "Warp Speed" sequence
-    setTimeout(() => {
-      setHasEntered(true);
-      setIsWarping(false);
-    }, 800);
-  };
-
-  if (!hasEntered) {
-    return (
-      <div style={{ backgroundColor: '#000', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
-        
-        {/* THE GOLD PALACE - Warp Layer */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url("/grand_palace.jpg.png")', 
-          backgroundSize: 'cover', backgroundPosition: 'center',
-          transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: isWarping ? 'scale(3) rotate(2deg)' : 'scale(1)',
-          filter: isWarping ? 'brightness(4) blur(40px)' : 'brightness(0.7) blur(0px)',
-          zIndex: 1
-        }} />
-
-        {/* LUMINOUS UI OVERLAY */}
-        <div style={{ zIndex: 10, textAlign: 'center', opacity: isWarping ? 0 : 1, transition: '0.4s' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: '900', letterSpacing: '0.5em', color: '#FFF', textShadow: '0 0 50px rgba(0, 229, 255, 0.8)', margin: 0 }}>GRAND CITADEL</h1>
-          <p style={{ color: '#D4AF37', letterSpacing: '18px', fontSize: '1.2rem', marginTop: '10px' }}>PALACE</p>
-          
-          <button 
-            onClick={handleEnter}
-            style={{ 
-              marginTop: '60px', background: 'rgba(0, 229, 255, 0.05)', backdropFilter: 'blur(25px)',
-              border: '1px solid #00E5FF', color: '#00E5FF', padding: '24px 100px',
-              fontSize: '12px', letterSpacing: '10px', textTransform: 'uppercase',
-              cursor: 'pointer', fontWeight: '900', boxShadow: '0 0 40px rgba(0, 229, 255, 0.3)',
-              borderRadius: '2px'
-            }}
-          >
-            Enter Gateway
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  {/* THE DESTINATION: SECURE VAULT */}
+export default function Home() {
   return (
-    <div style={{ backgroundColor: '#050505', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFF' }}>
-      <div style={{ background: '#0A0A0A', padding: '80px 60px', border: '1px solid #D4AF37', borderRadius: '2px', textAlign: 'center', width: '100%', maxWidth: '450px', boxShadow: '0 50px 100px rgba(0,0,0,0.9)' }}>
-        <img src="/GCS-Header.jpg" alt="Seal" style={{ width: '100px', marginBottom: '40px', border: '2px solid #D4AF37', borderRadius: '50%' }} />
-        <h3 style={{ color: '#D4AF37', letterSpacing: '6px', textTransform: 'uppercase' }}>Vault Access</h3>
-        <p style={{ fontSize: '10px', color: 'rgba(0, 229, 255, 0.6)', letterSpacing: '3px', marginBottom: '40px' }}>AUTHENTICATION REQUIRED</p>
-        <input type="password" placeholder="ENTER SOVEREIGN KEY" style={{ width: '100%', background: '#000', border: '1px solid #222', padding: '20px', color: '#FFF', marginBottom: '30px', textAlign: 'center', letterSpacing: '8px' }} />
-        <button style={{ background: '#D4AF37', width: '100%', padding: '20px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer', letterSpacing: '4px' }}>Validate Access</button>
-      </div>
-    </div>
+    <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+      <section className="relative h-screen w-full">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/grand-citadel.jpg')" }}
+        />
+
+        <div className="absolute inset-0 bg-black/25" />
+
+        <div className="absolute inset-0 z-10 flex items-end justify-start p-6 md:p-10">
+          <motion.button
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="group relative inline-flex items-center justify-center rounded-md border border-[#D4AF37] bg-black/55 px-8 py-3 text-lg font-semibold tracking-[0.18em] text-[#D4AF37] backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-black/70"
+          >
+            <span className="absolute inset-0 rounded-md border border-[#D4AF37]/80 shadow-[0_0_12px_rgba(212,175,55,0.55),0_0_28px_rgba(59,130,246,0.28)] group-hover:shadow-[0_0_18px_rgba(212,175,55,0.85),0_0_42px_rgba(59,130,246,0.45)]" />
+            <span className="relative z-10">ENTER</span>
+          </motion.button>
+        </div>
+      </section>
+    </main>
   );
 }
