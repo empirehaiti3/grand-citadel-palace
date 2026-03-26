@@ -7,14 +7,14 @@ export default function GrandCitadelPalace() {
 
   const handleEnter = () => {
     setIsWarping(true);
-    // 800ms Cinematic Warp Delay: The "Digital Door" opening sequence
+    // 800ms Cinematic Warp Delay
     setTimeout(() => {
       setHasEntered(true);
       setIsWarping(false);
     }, 800);
   };
 
-  // GATEWAY INTERFACE (The Exterior)
+  // THE SPLASH GATEWAY
   if (!hasEntered) {
     return (
       <div style={{ backgroundColor: '#000', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
@@ -61,7 +61,7 @@ export default function GrandCitadelPalace() {
     );
   }
 
-  // SECURE VAULT (The Interior Teleportation Target)
+  // THE LOGIN PORTAL (Teleportation Target)
   return (
     <div style={{ backgroundColor: '#050505', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFF' }}>
       <div style={{ background: '#0A0A0A', padding: '80px 60px', border: '1px solid #D4AF37', borderRadius: '2px', textAlign: 'center', width: '100%', maxWidth: '450px', boxShadow: '0 50px 100px rgba(0,0,0,0.9)' }}>
@@ -69,7 +69,7 @@ export default function GrandCitadelPalace() {
         <h3 style={{ color: '#D4AF37', letterSpacing: '6px', textTransform: 'uppercase' }}>Vault Access</h3>
         <p style={{ fontSize: '10px', color: 'rgba(0, 229, 255, 0.6)', letterSpacing: '3px', marginBottom: '40px' }}>IDENTITY AUTHENTICATION REQUIRED</p>
         <input type="password" placeholder="ENTER SOVEREIGN KEY" style={{ width: '100%', background: '#000', border: '1px solid #222', padding: '20px', color: '#FFF', marginBottom: '30px', textAlign: 'center', letterSpacing: '8px' }} />
-        <button style={{ background: '#D4AF37', width: '100%', padding: '20px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer', letterSpacing: '4px' }}>Validate Access</button>
+        <button style={{ background: '#D4AF37', width: '100', padding: '20px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer', letterSpacing: '4px' }}>Validate Access</button>
       </div>
     </div>
   );
