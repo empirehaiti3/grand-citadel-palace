@@ -7,7 +7,7 @@ export default function GrandCitadelPalace() {
 
   const handleEnter = () => {
     setIsWarping(true);
-    // 800ms delay to allow the visual "Warp" to peak before the screen teleports
+    // 800ms "Teleportation" delay for the visual warp to peak
     setTimeout(() => {
       setHasEntered(true);
       setIsWarping(false);
@@ -16,16 +16,9 @@ export default function GrandCitadelPalace() {
 
   if (!hasEntered) {
     return (
-      <div style={{ 
-        backgroundColor: '#000', 
-        minHeight: '100vh', 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        overflow: 'hidden',
-        position: 'relative'
-      }}>
-        {/* THE GOLD PALACE BACKGROUND - Warp Effect */}
+      <div style={{ backgroundColor: '#000', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', position: 'relative' }}>
+        
+        {/* THE GOLD PALACE - Warp Layer */}
         <div style={{
           position: 'absolute',
           inset: 0,
@@ -39,20 +32,8 @@ export default function GrandCitadelPalace() {
         }} />
 
         {/* LUMINOUS UI OVERLAY */}
-        <div style={{ 
-          zIndex: 10, 
-          textAlign: 'center', 
-          opacity: isWarping ? 0 : 1, 
-          transition: 'opacity 0.4s ease' 
-        }}>
-          <h1 style={{ 
-            fontSize: 'clamp(2.5rem, 8vw, 5rem)', 
-            fontWeight: '900', 
-            letterSpacing: '0.4em', 
-            color: '#FFF', 
-            textShadow: '0 0 40px rgba(0, 229, 255, 0.8)',
-            marginBottom: '0'
-          }}>GRAND CITADEL</h1>
+        <div style={{ zIndex: 10, textAlign: 'center', opacity: isWarping ? 0 : 1, transition: '0.4s ease' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', fontWeight: '900', letterSpacing: '0.4em', color: '#FFF', textShadow: '0 0 40px rgba(0, 229, 255, 0.8)' }}>GRAND CITADEL</h1>
           <p style={{ color: '#D4AF37', letterSpacing: '15px', fontSize: '1rem', marginTop: '10px' }}>PALACE</p>
           
           {/* THE 3D LUMINOUS "ENTER" BUTTON */}
@@ -71,18 +52,7 @@ export default function GrandCitadelPalace() {
               cursor: 'pointer',
               fontWeight: 'bold',
               boxShadow: '0 0 30px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.2)',
-              transition: '0.4s ease',
               borderRadius: '2px'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 229, 255, 0.7)';
-              e.currentTarget.style.background = 'rgba(0, 229, 255, 0.15)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 229, 255, 0.3)';
-              e.currentTarget.style.background = 'rgba(0, 229, 255, 0.05)';
-              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             Unlocking Gateway
@@ -92,32 +62,15 @@ export default function GrandCitadelPalace() {
     );
   }
 
-  {/* THE TELEPORTATION DESTINATION: MEMBER VAULT */}
+  {/* THE TELEPORTATION TARGET: MEMBER VAULT */}
   return (
-    <div style={{ 
-      backgroundColor: '#050505', 
-      minHeight: '100vh', 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      color: '#FFF' 
-    }}>
-      <div style={{ 
-        background: '#0A0A0A', 
-        padding: '60px', 
-        border: '1px solid rgba(212, 175, 55, 0.2)', 
-        borderRadius: '2px',
-        textAlign: 'center',
-        width: '100%', maxWidth: '420px',
-        boxShadow: '0 40px 80px rgba(0,0,0,0.9)',
-        animation: 'fadeIn 1s ease-out'
-      }}>
-        <img src="/GCS-Header.jpg" alt="Seal" style={{ width: '90px', marginBottom: '30px', border: '2px solid #D4AF37', borderRadius: '50%', boxShadow: '0 0 20px rgba(212, 175, 55, 0.2)' }} />
-        <h3 style={{ color: '#D4AF37', letterSpacing: '5px', textTransform: 'uppercase', marginBottom: '5px' }}>Vault Access</h3>
-        <p style={{ fontSize: '9px', color: 'rgba(0, 229, 255, 0.6)', letterSpacing: '2px', marginBottom: '40px' }}>IDENTITY AUTHENTICATION REQUIRED</p>
-        
-        <input type="password" placeholder="SOVEREIGN KEY" style={{ width: '100%', background: '#000', border: '1px solid #222', padding: '18px', color: '#FFF', marginBottom: '25px', textAlign: 'center', letterSpacing: '8px', fontSize: '12px' }} />
-        <button style={{ background: '#D4AF37', width: '100%', padding: '18px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer', letterSpacing: '2px' }}>VALIDATE ACCESS</button>
+    <div style={{ backgroundColor: '#050505', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#FFF' }}>
+      <div style={{ background: '#0A0A0A', padding: '60px', border: '1px solid rgba(212, 175, 55, 0.2)', borderRadius: '2px', textAlign: 'center', width: '100%', maxWidth: '420px', boxShadow: '0 40px 80px rgba(0,0,0,0.9)' }}>
+        <img src="/GCS-Header.jpg" alt="Seal" style={{ width: '90px', marginBottom: '30px', border: '2px solid #D4AF37', borderRadius: '50%' }} />
+        <h3 style={{ color: '#D4AF37', letterSpacing: '5px', textTransform: 'uppercase' }}>Vault Access</h3>
+        <p style={{ fontSize: '9px', color: 'rgba(0, 229, 255, 0.6)', marginBottom: '40px' }}>IDENTITY AUTHENTICATION REQUIRED</p>
+        <input type="password" placeholder="SOVEREIGN KEY" style={{ width: '100%', background: '#000', border: '1px solid #222', padding: '18px', color: '#FFF', marginBottom: '25px', textAlign: 'center', letterSpacing: '8px' }} />
+        <button style={{ background: '#D4AF37', width: '100%', padding: '18px', fontWeight: '900', color: '#000', border: 'none', cursor: 'pointer' }}>VALIDATE ACCESS</button>
       </div>
     </div>
   );
