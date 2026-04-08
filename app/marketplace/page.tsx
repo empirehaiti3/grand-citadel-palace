@@ -85,7 +85,6 @@ export default function Marketplace() {
               Request Access
             </button>
           </div>
-
         </div>
       </main>
     </div>
