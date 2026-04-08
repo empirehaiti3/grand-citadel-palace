@@ -1,1 +1,10 @@
-body { background: #0A0A0A !important; margin: 0; padding: 0; }
+:root {
+  --imperial-gold: #D4AF37;
+  --sovereign-black: #0A0A0A;
+  --electric-blue: #00E5FF;
+}
+
+body {
+  background-color: var(--sovereign-black);
+  color: var(--imperial-gold);
+}

@@ -1,0 +1,65 @@
+{/* Content */}
+<div
+  style={{
+    position: "relative",
+    textAlign: "center",
+    color: "#D4AF37",
+    padding: "2rem",
+  }}
+>
+  {/* 🔥 GCS Banner Overlay */}
+  <img
+    src="/gcs-banner.png"
+    alt="GCS Banner"
+    style={{
+      position: "absolute",
+      top: "-120px",
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: "140px",
+      filter: "drop-shadow(0 0 20px rgba(212,175,55,0.6))",
+    }}
+  />
+
+  <h1
+    style={{
+      fontSize: "clamp(2.5rem, 6vw, 5rem)",
+      letterSpacing: "4px",
+      textTransform: "uppercase",
+      textShadow:
+        "0 0 10px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.2)",
+    }}
+  >
+    Grand Citadel Palace
+  </h1>
+
+  <p
+    style={{
+      marginTop: "1rem",
+      fontSize: "1.2rem",
+      color: "#00BFFF",
+      textShadow: "0 0 12px rgba(0,191,255,0.6)",
+    }}
+  >
+    Sovereign Access Gateway
+  </p>
+
+  <a
+    href="/sovereign"
+    style={{
+      marginTop: "2rem",
+      display: "inline-block",
+      padding: "1rem 2.5rem",
+      border: "1px solid #D4AF37",
+      borderRadius: "8px",
+      textDecoration: "none",
+      color: "#D4AF37",
+      letterSpacing: "2px",
+      textTransform: "uppercase",
+      boxShadow:
+        "0 0 15px rgba(212,175,55,0.3), 0 0 25px rgba(0,191,255,0.2)",
+    }}
+  >
+    Enter the Citadel
+  </a>
+</div>
